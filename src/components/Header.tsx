@@ -18,12 +18,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
-      <nav className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center space-x-3 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-red-700 p-2 transition-transform group-hover:scale-105">
-            <Zap className="h-6 w-6 text-white" strokeWidth={2.5} />
-          </div>
-          <span className="text-xl font-bold text-black">NS Engineering Works</span>
+      <nav className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
+        <Link href="/" className="flex items-center group">
+          <img
+            src="/logo.jpeg"
+            alt="NS Engineering Works"
+            className="h-15 w-auto transition-transform group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop Navigation */}
