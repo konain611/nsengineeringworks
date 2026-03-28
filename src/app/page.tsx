@@ -1,15 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Zap, Wrench, ShoppingCart, Calendar, CheckCircle2, ArrowRight, ChevronRight, Shield, Truck } from "lucide-react"
+import { Zap, Wrench, ShoppingCart, Calendar, ArrowRight, CheckCircle2, TrendingUp, Users, Award } from "lucide-react"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-white py-10 md:py-6 overflow-hidden">
-
-        <div className="absolute inset-0">
-          <div className="absolute inset-0  opacity-100"></div>
+    <main className="flex min-h-screen flex-col bg-white">
+      <section className="relative pt-8 pb-24 md:pt-16 md:pb-32 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/cat.webp"
             alt="Industrial Generator"
@@ -18,89 +15,83 @@ export default function Home() {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/85"></div>
         </div>
-        <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="flex flex-col justify-center space-y-6">
-              {/* <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-200 shadow-sm">
-                <div className="h-2 w-2 rounded-full bg-red-600"></div>
-                <span className="text-sm font-medium text-gray-700">Powering Industries Since 1992</span>
-              </div> */}
-              <h1 className="text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
-                Power Solutions
-                <span className="block bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">Engineered for Excellence</span>
-              </h1>
-              <p className="text-lg leading-relaxed text-gray-600 md:text-xl max-w-2xl">
-                From 10KVA to megawatts, we deliver comprehensive generator solutions including sales, rentals, maintenance, and repair services. Powering your success with reliability and expertise since 1992.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="flex flex-col space-y-8">
+              <div className="space-y-4">
+                <p className="text-sm font-semibold text-red-600 uppercase tracking-wide">Power Solutions for Enterprise</p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Reliable Generator Solutions for Every Scale
+                </h1>
+                <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
+                  From 10KVA to megawatts, we deliver turnkey power solutions. Sales, rentals, maintenance, and expert support—everything your business needs for uninterrupted power.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link
                   href="/contact"
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-red-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/30 hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center rounded-lg bg-red-600 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/30 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
                 >
-                  <span className="relative">Get a Free Quote</span>
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  Get a Free Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <div className="flex items-center space-x-4">
-                  <Link
-                    href="/products"
-                    className="group inline-flex items-center text-base font-medium text-gray-700 hover:text-red-600 transition-colors"
-                  >
-                    Explore Products
-                    <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-8 py-4 text-base font-semibold text-gray-900 transition-all hover:border-gray-400 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+                >
+                  Explore Services
+                </Link>
               </div>
-              <div className="pt-4 flex items-center space-x-6">
-                <div className="flex items-center space-x-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-red-600">
-                    <Shield className="h-5 w-5" />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">24/7 Support</span>
+
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-gray-900">500+</p>
+                  <p className="text-sm text-gray-600 mt-1">Projects Delivered</p>
                 </div>
-                {/* <div className="flex items-center space-x-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-700">
-                    <Truck className="h-5 w-5" />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">Fast Delivery</span>
-                </div> */}
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-gray-900">30+</p>
+                  <p className="text-sm text-gray-600 mt-1">Years of Expertise</p>
+                </div>
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-gray-900">30+</p>
+                  <p className="text-sm text-gray-600 mt-1">Active Clients</p>
+                </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-red-600/5 via-blue-500/5 to-gray-200/20 blur-2xl"></div>
-                <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-xl">
-                  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-red-500/10"></div>
-                  <div className="relative p-8">
-                    <div className="space-y-6">
-                      <div className="group flex items-start space-x-4 rounded-xl bg-white/50 p-5 backdrop-blur-sm border border-gray-100 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
-                        <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gray-50 border border-gray-200 text-red-600 transition-colors group-hover:bg-red-50 group-hover:border-red-100">
-                          <Zap className="h-6 w-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900">10KVA to Megawatts</h3>
-                          <p className="mt-1 text-sm text-gray-600">Complete range of power solutions for every need</p>
-                        </div>
-                      </div>
-                      <div className="group flex items-start space-x-4 rounded-xl bg-white/50 p-5 backdrop-blur-sm border border-gray-100 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
-                        <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gray-50 border border-gray-200 text-gray-800 transition-colors group-hover:bg-gray-100 group-hover:border-gray-300">
-                          <Wrench className="h-6 w-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900">Expert Maintenance</h3>
-                          <p className="mt-1 text-sm text-gray-600">24/7 expert support and maintenance services</p>
-                        </div>
-                      </div>
-                      <div className="group flex items-start space-x-4 rounded-xl bg-white/50 p-5 backdrop-blur-sm border border-gray-100 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
-                        <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gray-50 border border-gray-200 text-gray-800 transition-colors group-hover:bg-gray-100 group-hover:border-gray-300">
-                          <Shield className="h-6 w-6 text-[#003366]" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900">Reliable Service</h3>
-                          <p className="mt-1 text-sm text-gray-600">Trusted by leading businesses nationwide</p>
-                        </div>
-                      </div>
+
+            <div className="relative hidden lg:block">
+              <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-red-100 to-gray-100 opacity-40 blur-3xl"></div>
+              <div className="relative bg-white rounded-2xl border border-gray-200 p-10 shadow-xl">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
+                      <Zap className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 text-lg">Broad Power Range</h3>
+                      <p className="text-gray-600 text-sm mt-1">Complete solutions from small to industrial-scale generators</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
+                      <Wrench className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 text-lg">Maintenance & Support</h3>
+                      <p className="text-gray-600 text-sm mt-1">24/7 expert support and proactive maintenance programs</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
+                      <ShoppingCart className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 text-lg">Flexible Options</h3>
+                      <p className="text-gray-600 text-sm mt-1">Buy, rent, or maintain with customized solutions for your needs</p>
                     </div>
                   </div>
                 </div>
@@ -110,81 +101,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="relative bg-gray-100 py-16 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white/50"></div>
-        </div>
-        <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <span className="mb-4 inline-block rounded-full bg-red-50 px-4 py-1.5 text-sm font-medium text-red-700">Our Services</span>
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Comprehensive Generator Solutions</h2>
-            <div className="mx-auto mt-4 max-w-2xl">
-              <p className="text-lg leading-8 text-gray-600">
-                Tailored power solutions designed to meet your specific requirements with unmatched reliability and efficiency.
-              </p>
-            </div>
+      <section className="py-20 md:py-24 bg-gray-50 border-t border-gray-200">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-red-600 uppercase tracking-wide mb-3">Our Services</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive Power Solutions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Complete generator solutions tailored to your operational requirements
+            </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: ShoppingCart,
-                title: "Dealing in Generators",
-                description: "We buy and sell generators from 10KVA to megawatts. Diesel, petrol, and gas options available.",
-                color: "red"
+                title: "Sales",
+                description: "Purchase generators from 10KVA to megawatts with diesel, petrol, and gas options",
               },
               {
                 icon: Calendar,
-                title: "Rental Services",
-                description: "Flexible rental options for short-term and long-term projects. Fast delivery and setup.",
-                color: "blue"
+                title: "Rentals",
+                description: "Flexible rental programs for short and long-term project requirements",
               },
               {
                 icon: Wrench,
-                title: "Repair & Maintenance",
-                description: "Expert repair services at your location or our facility. Preventive maintenance programs available.",
-                color: "red"
+                title: "Maintenance",
+                description: "Preventive and corrective maintenance with on-site and facility-based options",
               },
               {
                 icon: Zap,
-                title: "Overhaul Services",
-                description: "Complete generator overhaul services to restore your equipment to peak performance.",
-                color: "blue"
+                title: "Overhaul",
+                description: "Complete generator overhaul services restoring equipment to specification",
               }
             ].map((service, index) => {
               const Icon = service.icon;
-              const isRed = service.color === 'red';
-              const gradient = isRed
-                ? 'from-red-600 to-red-700 shadow-red-500/20'
-                : 'from-blue-900 to-blue-950 shadow-blue-900/20';
-              const hoverGradient = isRed
-                ? 'hover:shadow-red-500/30 hover:border-red-200'
-                : 'hover:shadow-blue-500/30 hover:border-blue-200';
-
               return (
                 <div
                   key={index}
-                  className={`group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${hoverGradient}`}
+                  className="bg-white rounded-xl p-8 border border-gray-200 transition-all duration-300 hover:border-red-300 hover:shadow-lg hover:shadow-red-100/50"
                 >
-                  <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${gradient} opacity-5 group-hover:opacity-10 transition-opacity`}></div>
-                  <div className="relative">
-                    <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-white border border-gray-200 ${isRed ? 'text-red-600 group-hover:bg-red-50 group-hover:border-red-100' : 'text-gray-800 group-hover:bg-gray-50 group-hover:border-gray-300'} transition-all duration-300`}>
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="mb-3 text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
-                    <div className="mt-4">
-                      <a
-                        href="#"
-                        className={`inline-flex items-center text-sm font-medium ${isRed ? 'text-red-600 hover:text-red-700' : 'text-blue-700 hover:text-blue-800'
-                          } group-hover:translate-x-1 transition-transform`}
-                      >
-                        Learn more
-                        <ChevronRight className="ml-1 h-4 w-4" />
-                      </a>
-                    </div>
+                  <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mb-6">
+                    <Icon className="h-6 w-6" />
                   </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
                 </div>
               );
             })}
@@ -192,82 +154,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/cat.webp"
-            alt="Industrial Generator"
-            fill
-            className="object-cover opacity-20"
-          />
-        </div>
-        <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,transparent)]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent"></div>
-        <div className="container relative z-10 mx-auto px-4 text-center md:px-6">
-          <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">
-            Ready to Power Your Business?
-          </h2>
-          <p className="mb-10 text-lg text-gray-300 max-w-2xl mx-auto">
-            Get in touch with us today for a free consultation and quote.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-xl bg-red-600 px-10 py-4 text-base font-semibold text-white transition-all hover:bg-red-700 hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-1"
-          >
-            Contact Us Now
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="relative bg-gray-100 py-20 overflow-hidden">
-        {/* <div className="absolute inset-0 opacity-10">
-          <Image
-            src="/mechanical.webp"
-            alt="Generator Maintenance"
-            fill
-            className="object-cover"
-          />
-        </div> */}
-        <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+      <section className="py-20 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-black md:text-4xl">Why Choose NS Engineering Works?</h2>
-              <p className="mb-8 text-lg text-gray-600">
-                With years of experience in the generator industry, we provide reliable, efficient, and cost-effective solutions for all your power generation needs.
-              </p>
-              <div className="space-y-4">
+              <p className="text-sm font-semibold text-red-600 uppercase tracking-wide mb-3">Why Choose Us</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                Industry Leadership with Proven Expertise
+              </h2>
+
+              <div className="space-y-6">
                 {[
-                  "Wide range of generators (10KVA to megawatts)",
-                  "Diesel, petrol, and gas options",
-                  "Expert maintenance and repair services",
-                  "24/7 emergency support",
-                  "Flexible rental solutions",
-                  "On-site and facility-based services",
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                    <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-red-600" />
-                    <span className="text-gray-700">{feature}</span>
+                  { title: "Comprehensive Range", desc: "Generators from 10KVA to megawatts covering all power requirements" },
+                  { title: "Expert Support", desc: "24/7 technical support and maintenance from industry professionals" },
+                  { title: "Flexible Solutions", desc: "Sales, rentals, and service options tailored to your timeline" },
+                  { title: "Quality Assurance", desc: "Rigorous testing and maintenance standards ensure reliability" },
+                  { title: "Rapid Response", desc: "Emergency support and expedited service for critical situations" },
+                  { title: "Partnership Approach", desc: "Long-term relationships focused on your operational success" },
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <CheckCircle2 className="h-6 w-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl bg-white p-10 shadow-xl border border-gray-200">
-              <h3 className="mb-8 text-2xl font-bold text-black">Our Expertise</h3>
-              <div className="grid grid-cols-1 gap-6">
-                <div className="group text-center p-8 rounded-xl bg-gradient-to-br from-red-50 to-red-100/50 border border-red-100 hover:shadow-lg transition-all hover:-translate-y-1">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent mb-3">500+</div>
-                  <div className="text-sm font-semibold text-gray-700">Projects Completed</div>
+
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-12 border border-gray-200">
+              <div className="space-y-8">
+                <div>
+                  <p className="text-red-600 text-sm font-semibold uppercase tracking-wide">Proven Track Record</p>
                 </div>
-                <div className="group text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 hover:shadow-lg transition-all hover:-translate-y-1">
-                  <div className="text-5xl font-bold text-gray-900 mb-3">30+</div>
-                  <div className="text-sm font-semibold text-gray-700">Active Clients</div>
-                </div>
-                <div className="group text-center p-8 rounded-xl bg-gradient-to-br from-blue-50/50 to-blue-100/30 border border-blue-100 hover:shadow-lg transition-all hover:-translate-y-1">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-blue-900 to-blue-950 bg-clip-text text-transparent mb-3">30+</div>
-                  <div className="text-sm font-semibold text-gray-700">Years of Experience</div>
+
+                <div className="space-y-8">
+                  <div className="border-b border-gray-300 pb-8">
+                    <p className="text-5xl md:text-6xl font-bold text-gray-900">500+</p>
+                    <p className="text-gray-700 font-medium mt-3">Projects Completed Nationwide</p>
+                  </div>
+
+                  <div className="border-b border-gray-300 pb-8">
+                    <p className="text-5xl md:text-6xl font-bold text-gray-900">30+</p>
+                    <p className="text-gray-700 font-medium mt-3">Years of Continuous Operation</p>
+                  </div>
+
+                  <div>
+                    <p className="text-5xl md:text-6xl font-bold text-gray-900">30+</p>
+                    <p className="text-gray-700 font-medium mt-3">Enterprise & Commercial Clients</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -275,22 +213,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4 text-center md:px-6">
-          <h2 className="mb-4 text-3xl font-bold text-black">Need a Custom Solution?</h2>
-          <p className="mb-8 text-lg text-gray-600">
-            Our team can create a tailored solution for your specific requirements.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-xl bg-red-600 px-8 py-3 text-base font-semibold text-white transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/25 hover:-translate-y-0.5"
-          >
-            Get a Quote
-          </Link>
+      <section className="py-20 md:py-24 bg-gray-900 text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            {[
+              { icon: TrendingUp, label: "Reliability", desc: "Industry-leading uptime and performance standards" },
+              { icon: Users, label: "Support", desc: "Dedicated account management and 24/7 assistance" },
+              { icon: Award, label: "Excellence", desc: "Certified maintenance and quality assurance protocols" },
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-red-600/20 text-red-400 mb-4">
+                    <Icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{item.label}</h3>
+                  <p className="text-gray-400">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="border-t border-gray-800 pt-12 flex flex-col sm:flex-row items-center justify-between gap-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3">Ready to Transform Your Power Infrastructure?</h2>
+              <p className="text-gray-400 max-w-xl">Contact our team for a consultation and custom solution designed for your operations.</p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-lg bg-red-600 px-10 py-4 text-base font-semibold text-white transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/30 whitespace-nowrap flex-shrink-0"
+            >
+              Get in Touch
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
         </div>
       </section>
 
+      <section className="py-16 md:py-20 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-sm font-semibold text-red-600 uppercase tracking-wide mb-4">Need Something Specific?</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Custom Power Solutions Available</h2>
+            <p className="text-lg text-gray-600 mb-8">Our engineering team designs tailored solutions for unique operational requirements. Contact us to discuss your specific needs.</p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-lg bg-red-600 px-8 py-3 text-base font-semibold text-white transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/30"
+            >
+              Request a Custom Quote
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
