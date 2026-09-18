@@ -59,21 +59,18 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col">
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-white py-16">
+    <main className="flex min-h-screen flex-col bg-white dark:bg-slate-950">
+      <section className="relative bg-gradient-to-br from-gray-50 to-white dark:from-slate-900 dark:to-slate-950 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold">Contact Us</h1>
-          <p className="text-gray-600 text-lg">
+          <h1 className="mb-4 text-4xl font-bold text-black dark:text-white">Contact Us</h1>
+          <p className="text-gray-600 dark:text-gray-400 text-lg">
             Share your requirements and connect with us instantly on WhatsApp.
           </p>
         </div>
       </section>
 
-      {/* Contact + Form */}
-      <section className="bg-white py-16">
+      <section className="bg-white dark:bg-slate-950 py-16">
         <div className="container mx-auto grid grid-cols-1 gap-12 px-4 lg:grid-cols-2">
-          {/* Info */}
           <div className="space-y-6">
             <Info icon={<Phone />} title="Phone" text="+92 333 2133959" />
             <Info icon={<Mail />} title="Email" text="nsengineringworks@gmail.com" />
@@ -92,7 +89,7 @@ export default function ContactPage() {
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="rounded-lg border bg-gray-50 p-8 space-y-4"
+            className="rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-slate-900 p-8 space-y-4"
           >
             <Input name="name" label="Full Name" value={formData.name} onChange={handleChange} />
             <Input name="email" label="Email" value={formData.email} onChange={handleChange} type="email" />
@@ -103,7 +100,7 @@ export default function ContactPage() {
               required
               value={formData.service}
               onChange={handleChange}
-              className="w-full rounded border px-4 py-2"
+              className="w-full rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white"
             >
               <option value="">Select Service</option>
               <option value="Generator Dealing">Dealing in Generators</option>
@@ -121,7 +118,7 @@ export default function ContactPage() {
               placeholder="Tell us about your requirement..."
               value={formData.message}
               onChange={handleChange}
-              className="w-full rounded border px-4 py-2"
+              className="w-full rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
             />
 
             <button
@@ -134,12 +131,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Exact Location Map */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 dark:bg-slate-900 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-6 text-center text-3xl font-bold">Our Location</h2>
+          <h2 className="mb-6 text-center text-3xl font-bold text-black dark:text-white">Our Location</h2>
 
-          <div className="overflow-hidden rounded-lg border shadow">
+          <div className="overflow-hidden rounded-lg border border-gray-300 dark:border-gray-700 shadow">
             <iframe
               title="NS Engineering Works Location"
               src={`https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}&z=16&output=embed`}
@@ -154,7 +150,7 @@ export default function ContactPage() {
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${MAP_LAT},${MAP_LNG}`}
               target="_blank"
-              className="text-red-600 font-semibold hover:underline"
+              className="text-red-600 dark:text-red-500 font-semibold hover:underline"
             >
               Open in Google Maps
             </a>
@@ -165,17 +161,15 @@ export default function ContactPage() {
   )
 }
 
-/* ---------- Helpers ---------- */
-
 function Info({ icon, title, text }: any) {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-10 w-10 items-center justify-center rounded bg-gray-900 text-white">
+      <div className="flex h-10 w-10 items-center justify-center rounded bg-gray-900 dark:bg-slate-800 text-white">
         {icon}
       </div>
       <div>
-        <p className="font-semibold">{title}</p>
-        <p className="text-gray-600">{text}</p>
+        <p className="font-semibold text-gray-900 dark:text-white">{title}</p>
+        <p className="text-gray-600 dark:text-gray-400">{text}</p>
       </div>
     </div>
   )
@@ -184,11 +178,11 @@ function Info({ icon, title, text }: any) {
 function Input({ label, ...props }: any) {
   return (
     <div>
-      <label className="block text-sm font-medium">{label}</label>
+      <label className="block text-sm font-medium text-gray-900 dark:text-gray-100">{label}</label>
       <input
         {...props}
         required
-        className="w-full rounded border px-4 py-2"
+        className="w-full rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 px-4 py-2 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
       />
     </div>
   )
